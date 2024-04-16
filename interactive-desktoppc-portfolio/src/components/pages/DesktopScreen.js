@@ -5,11 +5,10 @@ function DesktopScreen() {
 
     return (
 
-        <div className="hero-container-desktopScreen">
-            DesktopScreen
+        <div className="hero-container-desktopScreen">            
             <div className="bg-image"></div>
+            <img className = "pong-icon" src="public/PongIcon.jpg" alt="Button" />
         </div>
-
 
     );
 };
