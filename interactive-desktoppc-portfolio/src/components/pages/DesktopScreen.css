@@ -1,4 +1,4 @@
-.hero-container-lockScreen {
+.hero-container-desktopScreen {
     height: 100vh;
     width: 100%;
     display: flex;
@@ -8,18 +8,8 @@
     object-fit: contain;
 }
 
-.hero-container-lockScreen .username {
-    position: absolute;    
-    top: 35%;
-    /* left: 50%;
-    transform: translate(-50%, -50%); */
-    color: rgb(255, 255, 255);
-    font-size: 150px;
-    font-family: Arial, sans-serif;
-}
-
-.hero-container-lockScreen .bg-image {
-    background-image: url(/public/FirewatchScreens2.jpg);
+.bg-image {
+    background-image: url(/public/FirewatchScreens3.jpg);
     background-size: cover; 
     filter: blur(3px); /* Adjust the blur level as desired */
     /* Set rules to fill background */

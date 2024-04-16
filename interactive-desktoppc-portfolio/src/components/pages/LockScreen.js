@@ -3,14 +3,14 @@ import StartButton from '../StartButton';
 import ClockWidget from '../ClockWidget';
 import './LockScreen.css';
 
-function LockScreen() {
+const LockScreen = ( {loadDesktopScreen} ) => {
 
     return (
         <>
-            <div className= "hero-container">
+            <div className= "hero-container-lockScreen">
                 <div className="bg-image"></div>                
                 <div className="username">Nikhil Bagul</div>
-                <StartButton />                
+                <StartButton loadDesktopScreen = {loadDesktopScreen} />
             </div>
             <ClockWidget />
         </>
@@ -18,5 +18,3 @@ function LockScreen() {
 }
 
 export default LockScreen;
-
-//
