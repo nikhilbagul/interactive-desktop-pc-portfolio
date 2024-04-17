@@ -7,7 +7,7 @@ function DesktopScreen() {
 
         <div className="hero-container-desktopScreen">            
             <div className="bg-image"></div>
-            <img className = "pong-icon" src="public/PongIcon.jpg" alt="Button" />
+            <img className = "pong-icon" src="PongIcon.jpg" alt="Button" />
         </div>
 
     );

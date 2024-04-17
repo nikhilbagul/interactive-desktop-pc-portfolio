@@ -4,6 +4,7 @@
 /* Base style for the clock widget */
 .clock-widget {
     position: absolute;
+    padding: 0%;
     top: 75%;
     left: 5%;
     color: white; /* Set the text color */
@@ -37,5 +38,7 @@
     font-family: Arial, sans-serif;
     text-shadow: 2px 2px 5px black;
     filter: none;
+    padding: 0%;
+    
 }
 
