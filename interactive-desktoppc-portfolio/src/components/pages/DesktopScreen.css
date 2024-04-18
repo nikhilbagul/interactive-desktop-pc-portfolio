@@ -1,15 +1,16 @@
 .hero-container-desktopScreen {
-    height: 100vh;
-    width: 100%;
+    position: relative;
+    height: 80vh;
+    width: 80%;
+    transform: translate(10%, 10%);
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    object-fit: contain;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;    
 }
 
 .bg-image {
-    background-image: url(/public/FirewatchScreens3.jpg);
+    background-image: url(/public/FirewatchScreens4.jpg);
     background-size: cover; 
     filter: blur(3px); /* Adjust the blur level as desired */
     /* Set rules to fill background */
@@ -29,8 +30,30 @@
 }
 
 .pong-icon
+{    
+    height: 150px;
+    width: 150px;
+}
+
+.youtube-icon
+{    
+    height: 150px;
+    width: 150px;
+}
+
+.pong-game-window-iframe
+{
+    width: 1280px;
+    height: 720px;
+}
+
+
+.taskbar
 {
     position: absolute;
-    /* height: 100px;
-    width: 100px;     */
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: auto;
 }
