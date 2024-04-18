@@ -29,7 +29,6 @@ function DesktopScreen () {
                 { showPongGame && <PongIframeComponent/> }              
             </div>            
             <img className = "taskbar" src="WindowsTaskbar.jpg" />
-
         </div>
     );
 };

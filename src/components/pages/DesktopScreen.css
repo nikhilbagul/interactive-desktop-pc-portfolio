@@ -33,20 +33,31 @@
 {    
     height: 150px;
     width: 150px;
+    /* For responsive design and resizing */
+    overflow: auto;
+    min-width: 20;
+    min-height: 20;    
 }
 
 .youtube-icon
 {    
     height: 150px;
     width: 150px;
+    /* For responsive design and resizing */
+    overflow: auto;
+    min-width: 20;
+    min-height: 20;    
 }
 
 .pong-game-window-iframe
 {
     width: 1280px;
     height: 720px;
+    /* For responsive design and resizing */
+    overflow: auto;
+    min-width: 20;
+    min-height: 20;    
 }
-
 
 .taskbar
 {
@@ -55,5 +66,8 @@
     left: 0;
     right: 0;
     width: 100%;
+    /* For responsive design and resizing */
     height: auto;
+    overflow: auto;
+    resize: both;
 }
