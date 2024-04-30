@@ -6,8 +6,6 @@ import DesktopAppWindow from "../DesktopAppWindow";
 function DesktopScreen () {
 
     // change component state when user request to open any app from desktop screen
-      
-
 
     const [showPongGame, setDesktopScreenState] = useState(false);
     const togglePongGameContainer = () =>
@@ -25,6 +23,10 @@ function DesktopScreen () {
         setIsClicked(false);
     },[isClicked]);       
 
+    const onIconDoubleClickHandler = () => {
+        console.log("icon double clicked")
+    };   
+
     return (
         <div>
             <div className="bg-image"></div>            
@@ -36,6 +38,7 @@ function DesktopScreen () {
                         color={'#ffffff00'}
                         isActive = {false}
                         wasParentComponentClicked = {isClicked}
+                        onDoubleClick = {onIconDoubleClickHandler}
                     />
 
                     <DesktopIcon
@@ -75,87 +78,48 @@ function DesktopScreen () {
 
 export default DesktopScreen;
 
-function DesktopIcon({ iconName, imageUrl, color, isActive, wasParentComponentClicked}) {
+function DesktopIcon({ iconName, imageUrl, color, isActive, wasParentComponentClicked, onDoubleClick }) {
     
+    //const [isHovering, setIsHovering] = useState(false);
+    const [divColor, setDivColor] = useState('#ffffff00'); // Initial background color    
     const [isSelected, setIsSelected] = useState(false);
     
-    // const [lastSelected, setLastSelected] = useState(false);
-    // const [shortcutId, setShortcutId] = useState('');
-    // const [doubleClickTimerActive, setDoubleClickTimerActive] = useState(false);
-    
-    
+    console.log('comp rendered')
+
     // Update local state when propFromParent changes    
     useEffect(() => {        
-        //console.log(wasParentComponentClicked);
         setIsSelected(false);
     }, [wasParentComponentClicked]);
 
-    // const getShortcutId = useCallback(() => {
-    //     return iconName;
-    // },[iconName]
-    // );
-
-    // useEffect(() => {
-    //     setShortcutId(getShortcutId());
-    // },[iconName, getShortcutId]
-    // );
-
-
-    // const handleClickOutside = useCallback((event) => {
-    //    const targetId = event.target.id;
-    //    if (targetId !== shortcutId)
-    //    {
-    //         setIsSelected(false);
-    //    }
-    //    if (!isSelected && lastSelected)
-    //    {
-    //         setLastSelected(false);
-    //    }
-
-    //    console.log(shortcutId);
-    // },[isSelected, setIsSelected, setLastSelected, lastSelected, shortcutId]
-    // );
+    // Update Div Color state when isSelected changes 
+    useEffect(() => {
+        setDivColor(isSelected ? '#ffffff54' : '#ffffff00');
+    }, [isSelected]);
 
     // Function to handle the click event
     const handleDesktopIconClick = (event) => {
         event.stopPropagation(); // Prevent event from bubbling up to parent
-
-        // Check for double click
-        // if(doubleClickTimerActive)
-        // {
-        //     // open associated div
-        //     onOpen && onOpen();
-        //     setIsSelected(false);
-        //     setDoubleClickTimerActive(false);
-        //     return;
-        // }
-
-        // Change the color of the div to blue when clicked        
-        // Determine the background color based on the value of 'prevIsActive'
-        
         setIsSelected(!isSelected);
-        // setDoubleClickTimerActive(true);
-        // // set double click timer active
-        // setTimeout(() => {
-        //     setDoubleClickTimerActive(false);
-        // },300);
-    };//, [doubleClickTimerActive, setIsSelected, onOpen]);
+    };
 
-    // useEffect(() => {
-    //     document.addEventListener('mousedown', handleClickOutside);
+    const handleMouseEnter = () => {
+        if (!isSelected)
+            setDivColor('#ffffff20'); // Change background color to blue on hover
+    };
 
-    //     return () => {
-    //         document.addEventListener('mousedown', handleClickOutside);
-    //     }
-    // },[isSelected, handleClickOutside]);
-
-    const divColor = isSelected ? '#ffffff54' : '#ffffff00';
+    const handleMouseLeave = () => {
+        if (!isSelected)
+            setDivColor('#ffffff00'); // Change background color to blue on hover
+    };
 
     return (
       <div className="desktopIcon"
         id={iconName}
-        style={{ backgroundColor: divColor, borderColor: divColor}}        
+        style={{ backgroundColor: divColor, borderColor: divColor}}
         onClick={handleDesktopIconClick}
+        onDoubleClick={onDoubleClick}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
       >
         <img className="iconImage" src={imageUrl} alt={`Image ${iconName}`} />
         <div className="iconText">{iconName}</div>

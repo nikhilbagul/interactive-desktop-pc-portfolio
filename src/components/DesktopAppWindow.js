@@ -12,7 +12,7 @@ function DesktopAppWindow () {
                 <img className="topbarButtons" id="close" src="CloseWindow.png" />
             </div>
             <div id="app-canvas">
-                <PongIframeComponent/>
+                {/* <PongIframeComponent/> */}
             </div>
         </div>
     );    
