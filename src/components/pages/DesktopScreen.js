@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useState } from "react";
 import './DesktopScreen.css'
 import PongIframeComponent from "../PongGame";
+import DesktopAppWindow from "../DesktopAppWindow";
 
 function DesktopScreen () {
 
@@ -62,7 +63,10 @@ function DesktopScreen () {
                     />
                 </div>
 
-                { showPongGame && <PongIframeComponent/> }              
+                <DesktopAppWindow>                    
+                    { showPongGame && <PongIframeComponent/> }              
+                </DesktopAppWindow>
+                
             </div>            
             <img className = "taskbar" src="WindowsTaskbar.jpg" />
         </div>

@@ -1,0 +1,49 @@
+#desktop-app-container
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(151, 151, 151);
+    width: 1280px;
+    height: 753px;
+    border-left: 2px solid;
+    border-right: 2px solid;
+    border-bottom: 2px solid;    
+    border-color: rgb(171, 171, 171);
+}
+
+#topbar
+{
+    position: static;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 32px;
+    background-color: rgb(171, 171, 171);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.topbarButtons
+{
+    padding: 8px;    
+    width: 16px;
+    height: 16px;
+    background-color: rgb(171, 171, 171);
+}
+
+#app-canvas {
+    position: static;   
+    width: 100%;
+    height: 720px;
+    background-color: aliceblue;
+}
+
+#close:hover {
+    background-color: red; /* Change background color on hover */
+}
+
+
