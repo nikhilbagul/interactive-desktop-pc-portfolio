@@ -7,9 +7,9 @@
     background-color: rgb(151, 151, 151);
     width: 1280px;
     height: 753px;
-    border-left: 2px solid;
-    border-right: 2px solid;
-    border-bottom: 2px solid;    
+    border-left: 1px solid;
+    border-right: 1px solid;
+    border-bottom: 1px solid;    
     border-color: rgb(220, 220, 220);
 }
 

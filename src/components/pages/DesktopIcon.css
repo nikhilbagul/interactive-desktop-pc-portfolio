@@ -2,7 +2,7 @@
 {    
     position: relative;    
     height: 110px;
-    width: 80px;
+    width: 70px;
     margin: 10px;
     cursor: grab;
     border: 1.5px dotted rgba(255, 255, 255, 0);
@@ -11,17 +11,17 @@
 .iconImage
 {
     position: relative;    
-    height: 70px;
-    width: 70px;
+    height: 60px;
+    width: 60px;
     padding: 5px;
 }
 
 .iconText
 {
     position: relative;    
-    top: 5px;
+    /* top: 5px; */
     height: 20px;
-    width: 80px;
+    width: 70px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Use Segoe UI font */
     text-align: center; /* Center the text horizontally */
     color:aliceblue;

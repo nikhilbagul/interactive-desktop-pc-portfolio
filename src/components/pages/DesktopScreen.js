@@ -9,10 +9,13 @@ import TaskbarAppIcon from "../TaskbarAppIcon";
 function DesktopScreen () {
 
     // change component state when user request to open any app from desktop screen
-    const [startButtonColor, setStartButtonColor] = useState('#000000'); // Initial background color
-    const [isPongActive, setIsPongActive] = useState(false);
+    const [startButtonColor, setStartButtonColor] = useState('#000000'); // Initial background color    
     const [isBlankSpaceClicked, setIsBlankSpaceClicked] = useState(false);
     const [isStartMenuOpen, setIsStartMenuOpen] = useState(false);
+    const [isResumeOpen, setIsResumeOpen] = useState(false);
+    const [isBehanceOpen, setIsBehanceOpen] = useState(false);
+    const [isYoutubeOpen, setIsYoutubeOpen] = useState(false);
+    const [isPongOpen, setIsPongOpen] = useState(false);
 
     const handleBlankSpaceClick = () => {        
         setIsBlankSpaceClicked(true); // Update state to indicate the parent component was clicked        
@@ -23,16 +26,31 @@ function DesktopScreen () {
         }, 100);
     };   
 
-    console.log(isPongActive);
     console.log('comp rendered');
 
-    const onIconDoubleClickHandler = (childName) => {        
-        //console.log(`Double clicked on ${childName}`);
-        setIsPongActive(true);
+    const onIconDoubleClickHandler = (appName) => {        
+        //console.log(`Double clicked on ${appName}`);
+        
+        if(appName === "Pong")
+            setIsPongOpen(true);
+        if(appName === "Resume")
+            setIsResumeOpen(true);
+        if(appName === "Youtube")
+            setIsYoutubeOpen(true);
+        if(appName === "Behance")
+            setIsBehanceOpen(true);
     };   
 
     const closeDesktopAppWindow = (appName) => {
-        setIsPongActive(false);
+
+        if(appName === "Pong" && isPongOpen)
+            setIsPongOpen(false);
+        if(appName === "Resume" && isResumeOpen)
+            setIsResumeOpen(false);
+        if(appName === "Youtube" && isYoutubeOpen)
+            setIsYoutubeOpen(false);
+        if(appName === "Behance" && isBehanceOpen)
+            setIsBehanceOpen(false);
     }
 
     const handleStartButtonMouseEnter = () => {
@@ -112,9 +130,19 @@ function DesktopScreen () {
                         wasParentComponentClicked = {isBlankSpaceClicked}
                         onDoubleClick = {onIconDoubleClickHandler}
                     />
+
+                    <DesktopIcon
+                        iconName={"Pong"}
+                        imageUrl={"pongIcon.png"}                        
+                        wasParentComponentClicked = {isBlankSpaceClicked}
+                        onDoubleClick = {onIconDoubleClickHandler}
+                    />
                 </div>
 
-                <DesktopAppWindow appToRender = {"Pong"} isAppActive = {isPongActive} onAppClosedCallback={closeDesktopAppWindow}/>
+                <DesktopAppWindow appToRender = {"Pong"} isAppActive = {isPongOpen} onAppClosedCallback={closeDesktopAppWindow}/>
+                <DesktopAppWindow appToRender = {"Youtube"} isAppActive = {isYoutubeOpen} onAppClosedCallback={closeDesktopAppWindow}/>
+                <DesktopAppWindow appToRender = {"Resume"} isAppActive = {isResumeOpen} onAppClosedCallback={closeDesktopAppWindow}/>
+                <DesktopAppWindow appToRender = {"Behance"} isAppActive = {isBehanceOpen} onAppClosedCallback={closeDesktopAppWindow}/>
                 
             </div>
 
@@ -133,7 +161,12 @@ function DesktopScreen () {
                     <p id="search-box-text" >Welcome back Nikhil!</p>
                 </div>               
 
-                <TaskbarAppIcon />
+
+                {isPongOpen && <TaskbarAppIcon appName={"Pong"} imageUrl={"pongIcon.png"} isAppMaximized={true} /> }
+                {isResumeOpen && <TaskbarAppIcon appName={"Resume"} imageUrl={"resumeIcon.png"} isAppMaximized={true} /> }
+                {isBehanceOpen && <TaskbarAppIcon appName={"Behance"} imageUrl={"behanceIcon.png"} isAppMaximized={true} /> }
+                {isYoutubeOpen && <TaskbarAppIcon appName={"Youtube"} imageUrl={"youtubeIcon.png"} isAppMaximized={true} /> }
+                
 
                 <div id="clock-widget">
                     <div id="time">{currentDateTime.time}</div>

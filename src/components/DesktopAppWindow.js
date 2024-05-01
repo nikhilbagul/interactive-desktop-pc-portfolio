@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import './DesktopAppWindow.css';
-import PongIframeComponent from "./PongGame";
+import PongIframeComponent from "./iframeComponents/PongGame";
 
 function DesktopAppWindow ({ appToRender, isAppActive, onAppClosedCallback }) {    
     
@@ -17,7 +17,8 @@ function DesktopAppWindow ({ appToRender, isAppActive, onAppClosedCallback }) {
         setContainerPosition({ x: initialX, y: initialY });
     }, []);
 
-    const [showPongApp, setPongAppToActive] = useState(false);   
+    const [showPongApp, setPongAppToActive] = useState(false);
+    const [showBehanceApp, setBehanceAppToActive] = useState(false);   
 
     useEffect(() => {
         console.log(appToRender)        
