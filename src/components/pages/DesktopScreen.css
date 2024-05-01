@@ -72,16 +72,63 @@
 }
 
 .taskbar
-{
+{    
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
-    width: 100%;
-    /* For responsive design and resizing */
-    height: auto;
-    overflow: auto;
-    resize: both;
+    width: 100%;    
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: row;
+}
+
+#windows-start-button
+{     
+    bottom: 0;
+    left: 0;     
+    height: 20px;
+    width: 20px;
+    padding: 15px;    
+    object-fit: scale-down;
+    overflow: hidden;    
+}
+
+#search-box
+{
+    position: relative;    
+    height: 100%;
+    width: 300px;
+    top:0;
+    bottom: 0;
+    background-color: aliceblue;
+    display: flex;    
+    justify-content: center; /* Horizontally center content */
+    align-items: center; /* Vertically center content */    
+}
+
+#search-box-text
+{   
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Use Segoe UI font */    
+    text-align: center;
+}
+
+#clock-widget {
+    margin-left: auto;
+    float: right;
+    right: 0;
+    height: 100%;
+    width: 100px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Use Segoe UI font */
+    text-align: center; /* Center the text horizontally */    
+    font-size: 13px; /* Set the font size */
+    color: aliceblue;
+    display: flex;    
+    justify-content: center; /* Horizontally center content */
+    align-items: center; /* Vertically center content */
+    display: flex;    
+    flex-direction: column;
 }
 
 .youtube-icon

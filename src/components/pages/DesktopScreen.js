@@ -2,30 +2,69 @@ import React, { useCallback, useEffect, useState } from "react";
 import './DesktopScreen.css'
 import PongIframeComponent from "../PongGame";
 import DesktopAppWindow from "../DesktopAppWindow";
+import moment from 'moment';
 
 function DesktopScreen () {
 
     // change component state when user request to open any app from desktop screen
+    const [startButtonColor, setStartButtonColor] = useState('#000000'); // Initial background color
+    const [isPongActive, setIsPongActive] = useState(false);
+    const [isBlankSpaceClicked, setIsBlankSpaceClicked] = useState(false);
 
-    const [showPongGame, setDesktopScreenState] = useState(false);
-    const togglePongGameContainer = () =>
-    {
-        setDesktopScreenState(!showPongGame);
+    const handleClick = () => {        
+        setIsBlankSpaceClicked(true); // Update state to indicate the parent component was clicked        
+        console.log("parent div clicked");        
+        // Reset parentClicked prop after click
+        setTimeout(() => {
+            setIsBlankSpaceClicked(false); 
+        }, 100);
+    };   
+
+    console.log(isPongActive);
+    console.log('comp rendered');
+
+    const onIconDoubleClickHandler = (childName) => {        
+        //console.log(`Double clicked on ${childName}`);
+        setIsPongActive(true);
+    };   
+
+    const closeDesktopAppWindow = (appName) => {
+        setIsPongActive(false);
     }
 
-    const [isClicked, setIsClicked] = useState(false);
-    const handleClick = () => {        
-        setIsClicked(true); // Update state to indicate the parent component was clicked        
-        //console.log("parent div clicked");
+    const handleStartButtonMouseEnter = () => {
+        setStartButtonColor("#F1532E");
     };
-    // Reset parentClicked prop after click
-    useEffect(() => {
-        setIsClicked(false);
-    },[isClicked]);       
 
-    const onIconDoubleClickHandler = () => {
-        console.log("icon double clicked")
-    };   
+    const handleStartButtonMouseLeave = () => {
+        setStartButtonColor("#000000");
+    };
+
+    const handleStartButtonClick = () => {
+        setStartButtonColor("#00000055");
+    };
+
+    // State to store the current time, date, and day
+    const [currentDateTime, setCurrentDateTime] = useState({
+        time: '',
+        date: '',
+        day: '',
+    });
+
+    // Function to update the current date and time
+    const updateDateTime = () => {
+        const now = moment();
+        setCurrentDateTime({
+            time: now.format('h:mm A'),
+            date: now.format('MMMM D, YYYY')
+        });
+    };
+
+    // Use an effect to update the date and time every second
+    useEffect(() => {
+        const interval = setInterval(updateDateTime, 10000);
+        return () => clearInterval(interval);
+    }, []);
 
     return (
         <div>
@@ -34,57 +73,63 @@ function DesktopScreen () {
                 <div className="desktopColumn">
                     <DesktopIcon
                         iconName={"Resume"}
-                        imageUrl={"resumeIcon.png"}
-                        color={'#ffffff00'}
-                        isActive = {false}
-                        wasParentComponentClicked = {isClicked}
+                        imageUrl={"resumeIcon.png"}                        
+                        wasParentComponentClicked = {isBlankSpaceClicked}
                         onDoubleClick = {onIconDoubleClickHandler}
                     />
 
                     <DesktopIcon
                         iconName={"Youtube"}
-                        imageUrl={"youtubeIcon.png"}
-                        color={'#ffffff00'}
-                        isActive = {false}
-                        wasParentComponentClicked = {isClicked}
+                        imageUrl={"youtubeIcon.png"}                        
+                        wasParentComponentClicked = {isBlankSpaceClicked}
+                        onDoubleClick = {onIconDoubleClickHandler}
                     />
 
                     <DesktopIcon
                         iconName={"Behance"}
-                        imageUrl={"behanceIcon.png"}
-                        color={'#ffffff00'}
-                        isActive = {false}
-                        wasParentComponentClicked = {isClicked}
+                        imageUrl={"behanceIcon.png"}                        
+                        wasParentComponentClicked = {isBlankSpaceClicked}
+                        onDoubleClick = {onIconDoubleClickHandler}
                     />
 
                     <DesktopIcon
                         iconName={"React"}
-                        imageUrl={"reactIcon.png"}
-                        color={'#ffffff00'}
-                        isActive = {false}
-                        wasParentComponentClicked = {isClicked}
+                        imageUrl={"reactIcon.png"}                        
+                        wasParentComponentClicked = {isBlankSpaceClicked}
+                        onDoubleClick = {onIconDoubleClickHandler}
                     />
                 </div>
 
-                <DesktopAppWindow>                    
-                    { showPongGame && <PongIframeComponent/> }              
-                </DesktopAppWindow>
+                <DesktopAppWindow appToRender = {"Pong"} isAppActive = {isPongActive} onAppClosedCallback={closeDesktopAppWindow}/>
                 
             </div>            
-            <img className = "taskbar" src="WindowsTaskbar.jpg" />
+            <div className = "taskbar" >
+                <img 
+                    id="windows-start-button" 
+                    src="windowsIcon.png"
+                    onMouseEnter={handleStartButtonMouseEnter}
+                    onMouseLeave={handleStartButtonMouseLeave}
+                    style={{ backgroundColor: startButtonColor}}
+                />
+                <div id="search-box" >
+                    <p id="search-box-text" >Welcome back Nikhil!</p>
+                </div>
+                <div id="clock-widget">
+                    <div id="time">{currentDateTime.time}</div>
+                    <div id="date">{currentDateTime.date}</div>
+                </div>
+            </div>
         </div>
     );
 };
 
 export default DesktopScreen;
 
-function DesktopIcon({ iconName, imageUrl, color, isActive, wasParentComponentClicked, onDoubleClick }) {
+function DesktopIcon({ iconName, imageUrl, wasParentComponentClicked, onDoubleClick }) {
     
     //const [isHovering, setIsHovering] = useState(false);
     const [divColor, setDivColor] = useState('#ffffff00'); // Initial background color    
-    const [isSelected, setIsSelected] = useState(false);
-    
-    console.log('comp rendered')
+    const [isSelected, setIsSelected] = useState(false);    
 
     // Update local state when propFromParent changes    
     useEffect(() => {        
@@ -104,20 +149,24 @@ function DesktopIcon({ iconName, imageUrl, color, isActive, wasParentComponentCl
 
     const handleMouseEnter = () => {
         if (!isSelected)
-            setDivColor('#ffffff20'); // Change background color to blue on hover
+            setDivColor('#ffffff20'); // Change background color 
     };
 
     const handleMouseLeave = () => {
         if (!isSelected)
-            setDivColor('#ffffff00'); // Change background color to blue on hover
+            setDivColor('#ffffff00'); // Change background color 
     };
+
+    const handleDoubleClick = () => {
+        onDoubleClick(iconName); // Call parent callback with child name
+      };
 
     return (
       <div className="desktopIcon"
         id={iconName}
         style={{ backgroundColor: divColor, borderColor: divColor}}
         onClick={handleDesktopIconClick}
-        onDoubleClick={onDoubleClick}
+        onDoubleClick={handleDoubleClick}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
