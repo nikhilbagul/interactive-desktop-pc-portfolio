@@ -1,0 +1,8 @@
+#start-menu
+{
+    position: absolute;
+    height: 40%;
+    width: 300px;
+    bottom: 50px;
+    background-color: rgba(0, 0, 0, 0.7);
+}

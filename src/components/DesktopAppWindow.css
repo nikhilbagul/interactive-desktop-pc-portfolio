@@ -1,16 +1,16 @@
 #desktop-app-container
 {
     position: absolute;
-    top: 50%;
+    /* top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); */
     background-color: rgb(151, 151, 151);
     width: 1280px;
     height: 753px;
     border-left: 2px solid;
     border-right: 2px solid;
     border-bottom: 2px solid;    
-    border-color: rgb(171, 171, 171);
+    border-color: rgb(220, 220, 220);
 }
 
 #topbar
@@ -20,11 +20,18 @@
     left: 0;
     width: 100%;
     height: 32px;
-    background-color: rgb(171, 171, 171);
+    background-color: rgb(220, 220, 220);
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    align-items: center;
+    align-items: center;    
+}
+
+#topbar-hitbox
+{    
+    height: 100%;
+    width: calc(100% - 96px);
+    cursor: move;
 }
 
 .topbarButtons
@@ -32,7 +39,8 @@
     padding: 8px;    
     width: 16px;
     height: 16px;
-    background-color: rgb(171, 171, 171);
+    background-color: rgb(220, 220, 220);
+    opacity: 0.7;
 }
 
 #app-canvas {
@@ -44,6 +52,14 @@
 
 #close:hover {
     background-color: red; /* Change background color on hover */
+}
+
+#minimize:hover {
+    background-color: rgb(140, 140, 140); /* Change background color on hover */
+}
+
+#restoreDown:hover {
+    background-color: rgb(140, 140, 140); /* Change background color on hover */
 }
 
 

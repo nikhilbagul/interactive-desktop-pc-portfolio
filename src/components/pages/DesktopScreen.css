@@ -41,36 +41,6 @@
     align-items: flex-start; */
 }
 
-.desktopIcon
-{    
-    position: relative;    
-    height: 110px;
-    width: 80px;
-    margin: 10px;
-    cursor: grab;
-    border: 1.5px dotted rgba(255, 255, 255, 0);
-}
-
-.iconImage
-{
-    position: relative;    
-    height: 70px;
-    width: 70px;
-    padding: 5px;
-}
-
-.iconText
-{
-    position: relative;    
-    top: 5px;
-    height: 20px;
-    width: 80px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Use Segoe UI font */
-    text-align: center; /* Center the text horizontally */
-    color:aliceblue;
-    font-size: 12px; /* Set the font size */
-}
-
 .taskbar
 {    
     position: absolute;
@@ -85,19 +55,16 @@
 }
 
 #windows-start-button
-{     
-    bottom: 0;
-    left: 0;     
+{    
     height: 20px;
     width: 20px;
     padding: 15px;    
     object-fit: scale-down;
-    overflow: hidden;    
+    overflow: hidden;
 }
 
 #search-box
-{
-    position: relative;    
+{        
     height: 100%;
     width: 300px;
     top:0;
@@ -129,24 +96,4 @@
     align-items: center; /* Vertically center content */
     display: flex;    
     flex-direction: column;
-}
-
-.youtube-icon
-{    
-    height: 150px;
-    width: 150px;
-    /* For responsive design and resizing */
-    overflow: auto;
-    min-width: 20;
-    min-height: 20;    
-}
-
-.pong-game-window-iframe
-{
-    width: 1280px;
-    height: 720px;
-    /* For responsive design and resizing */
-    overflow: auto;
-    min-width: 20;
-    min-height: 20;    
 }

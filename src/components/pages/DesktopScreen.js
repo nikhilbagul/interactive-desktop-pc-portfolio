@@ -1,8 +1,10 @@
 import React, { useCallback, useEffect, useState } from "react";
 import './DesktopScreen.css'
-import PongIframeComponent from "../PongGame";
 import DesktopAppWindow from "../DesktopAppWindow";
 import moment from 'moment';
+import StartMenu from "./StartMenu";
+import DesktopIcon from "./DesktopIcon";
+import TaskbarAppIcon from "../TaskbarAppIcon";
 
 function DesktopScreen () {
 
@@ -10,8 +12,9 @@ function DesktopScreen () {
     const [startButtonColor, setStartButtonColor] = useState('#000000'); // Initial background color
     const [isPongActive, setIsPongActive] = useState(false);
     const [isBlankSpaceClicked, setIsBlankSpaceClicked] = useState(false);
+    const [isStartMenuOpen, setIsStartMenuOpen] = useState(false);
 
-    const handleClick = () => {        
+    const handleBlankSpaceClick = () => {        
         setIsBlankSpaceClicked(true); // Update state to indicate the parent component was clicked        
         console.log("parent div clicked");        
         // Reset parentClicked prop after click
@@ -33,15 +36,26 @@ function DesktopScreen () {
     }
 
     const handleStartButtonMouseEnter = () => {
-        setStartButtonColor("#F1532E");
+        if(!isStartMenuOpen)
+            setStartButtonColor("#F1532E");
     };
 
     const handleStartButtonMouseLeave = () => {
-        setStartButtonColor("#000000");
+        if(!isStartMenuOpen)
+            setStartButtonColor("#000000");
     };
 
     const handleStartButtonClick = () => {
-        setStartButtonColor("#00000055");
+        if(!isStartMenuOpen)
+        {
+            setStartButtonColor("#747474");
+            setIsStartMenuOpen(true);
+        }
+        else if(isStartMenuOpen)
+        {
+            setStartButtonColor("#000000");
+            setIsStartMenuOpen(false);
+        }
     };
 
     // State to store the current time, date, and day
@@ -62,14 +76,14 @@ function DesktopScreen () {
 
     // Use an effect to update the date and time every second
     useEffect(() => {
-        const interval = setInterval(updateDateTime, 10000);
+        const interval = setInterval(updateDateTime, 5000);
         return () => clearInterval(interval);
     }, []);
 
     return (
         <div>
             <div className="bg-image"></div>            
-            <div className="hero-container-desktopScreen" onClick={handleClick}>
+            <div className="hero-container-desktopScreen" onClick={handleBlankSpaceClick}>
                 <div className="desktopColumn">
                     <DesktopIcon
                         iconName={"Resume"}
@@ -102,18 +116,25 @@ function DesktopScreen () {
 
                 <DesktopAppWindow appToRender = {"Pong"} isAppActive = {isPongActive} onAppClosedCallback={closeDesktopAppWindow}/>
                 
-            </div>            
+            </div>
+
+            {isStartMenuOpen && <StartMenu />}
+
             <div className = "taskbar" >
                 <img 
                     id="windows-start-button" 
                     src="windowsIcon.png"
                     onMouseEnter={handleStartButtonMouseEnter}
                     onMouseLeave={handleStartButtonMouseLeave}
+                    onClick={handleStartButtonClick}
                     style={{ backgroundColor: startButtonColor}}
                 />
                 <div id="search-box" >
                     <p id="search-box-text" >Welcome back Nikhil!</p>
-                </div>
+                </div>               
+
+                <TaskbarAppIcon />
+
                 <div id="clock-widget">
                     <div id="time">{currentDateTime.time}</div>
                     <div id="date">{currentDateTime.date}</div>
@@ -124,54 +145,3 @@ function DesktopScreen () {
 };
 
 export default DesktopScreen;
-
-function DesktopIcon({ iconName, imageUrl, wasParentComponentClicked, onDoubleClick }) {
-    
-    //const [isHovering, setIsHovering] = useState(false);
-    const [divColor, setDivColor] = useState('#ffffff00'); // Initial background color    
-    const [isSelected, setIsSelected] = useState(false);    
-
-    // Update local state when propFromParent changes    
-    useEffect(() => {        
-        setIsSelected(false);
-    }, [wasParentComponentClicked]);
-
-    // Update Div Color state when isSelected changes 
-    useEffect(() => {
-        setDivColor(isSelected ? '#ffffff54' : '#ffffff00');
-    }, [isSelected]);
-
-    // Function to handle the click event
-    const handleDesktopIconClick = (event) => {
-        event.stopPropagation(); // Prevent event from bubbling up to parent
-        setIsSelected(!isSelected);
-    };
-
-    const handleMouseEnter = () => {
-        if (!isSelected)
-            setDivColor('#ffffff20'); // Change background color 
-    };
-
-    const handleMouseLeave = () => {
-        if (!isSelected)
-            setDivColor('#ffffff00'); // Change background color 
-    };
-
-    const handleDoubleClick = () => {
-        onDoubleClick(iconName); // Call parent callback with child name
-      };
-
-    return (
-      <div className="desktopIcon"
-        id={iconName}
-        style={{ backgroundColor: divColor, borderColor: divColor}}
-        onClick={handleDesktopIconClick}
-        onDoubleClick={handleDoubleClick}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-      >
-        <img className="iconImage" src={imageUrl} alt={`Image ${iconName}`} />
-        <div className="iconText">{iconName}</div>
-      </div>
-    );
-  }

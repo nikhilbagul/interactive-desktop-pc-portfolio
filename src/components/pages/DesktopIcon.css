@@ -1,0 +1,29 @@
+.desktopIcon
+{    
+    position: relative;    
+    height: 110px;
+    width: 80px;
+    margin: 10px;
+    cursor: grab;
+    border: 1.5px dotted rgba(255, 255, 255, 0);
+}
+
+.iconImage
+{
+    position: relative;    
+    height: 70px;
+    width: 70px;
+    padding: 5px;
+}
+
+.iconText
+{
+    position: relative;    
+    top: 5px;
+    height: 20px;
+    width: 80px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Use Segoe UI font */
+    text-align: center; /* Center the text horizontally */
+    color:aliceblue;
+    font-size: 12px; /* Set the font size */
+}
