@@ -13,13 +13,36 @@
     float: left;
     height: 100%;
     width: 50px;
-    background-color: rgba(141, 141, 141, 0.3);       
+    background-color: rgba(141, 141, 141, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;   
+}
+
+#power-button
+{
+    position: relative;
+    height: 40px;
+    width: 50%;
+    padding: 25%;
+    object-fit: contain;
+    color: rgb(100, 100, 100);
+}
+
+#settings-button
+{
+    position: relative;
+    height: 40px;
+    width: 44%;
+    padding: 28%;
+    object-fit: contain;
+    color: rgb(100, 100, 100);
 }
 
 #os-label-text
 {
     position: relative;
-    height: 100%;
+    height: 80%;
     width: 100%;
     text-orientation: sideways;
     writing-mode: tb-rl;
@@ -30,6 +53,8 @@
     color:rgb(195, 198, 202);
     font-size: 32px; /* Set the font size */ 
     display: flex;
-    justify-content: center; /* Horizontal alignment */
-    align-items: center   
+    justify-content: right; /* Horizontal alignment */
+    align-items: center;
+    padding-bottom: 15px;
+    
 }
