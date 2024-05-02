@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import './DesktopScreen.css'
 import DesktopAppWindow from "../DesktopAppWindow";
 import moment from 'moment';
@@ -105,17 +105,59 @@ function DesktopScreen () {
         <div>
             <div className="bg-image"></div>            
             <div className="hero-container-desktopScreen" onClick={handleBlankSpaceClick}>
-                <div className="desktopColumn">
+                <div className="appDrawer">
                     <DesktopIcon
-                        iconName={"Resume"}
-                        imageUrl={"resumeIcon.png"}                        
+                        iconName={"RecycleBin"}
+                        imageUrl={"recycleBinIcon.png"}                        
                         wasParentComponentClicked = {isBlankSpaceClicked}
                         onDoubleClick = {onIconDoubleClickHandler}
                     />
 
                     <DesktopIcon
-                        iconName={"Youtube"}
-                        imageUrl={"youtubeIcon.png"}                        
+                        iconName={"MyPC"}
+                        imageUrl={"myPcIcon.png"}                        
+                        wasParentComponentClicked = {isBlankSpaceClicked}
+                        onDoubleClick = {onIconDoubleClickHandler}
+                    />
+
+                    <DesktopIcon
+                        iconName={"Cmd"}
+                        imageUrl={"cmdIcon.png"}                        
+                        wasParentComponentClicked = {isBlankSpaceClicked}
+                        onDoubleClick = {onIconDoubleClickHandler}
+                    />
+
+                    <DesktopIcon
+                        iconName={"Google Chrome"}
+                        imageUrl={"chromeIcon.png"}                        
+                        wasParentComponentClicked = {isBlankSpaceClicked}
+                        onDoubleClick = {onIconDoubleClickHandler}
+                    />
+
+                    <DesktopIcon
+                        iconName={"Firefox"}
+                        imageUrl={"firefoxIcon.png"}                        
+                        wasParentComponentClicked = {isBlankSpaceClicked}
+                        onDoubleClick = {onIconDoubleClickHandler}
+                    />     
+
+                    <DesktopIcon
+                        iconName={"React"}
+                        imageUrl={"reactIcon.png"}                        
+                        wasParentComponentClicked = {isBlankSpaceClicked}
+                        onDoubleClick = {onIconDoubleClickHandler}
+                    />               
+
+                    <DesktopIcon
+                        iconName={"Github"}
+                        imageUrl={"githubIcon.png"}                        
+                        wasParentComponentClicked = {isBlankSpaceClicked}
+                        onDoubleClick = {onIconDoubleClickHandler}
+                    />
+
+                    <DesktopIcon
+                        iconName={"Pixyz"}
+                        imageUrl={"pixyzIcon.png"}                        
                         wasParentComponentClicked = {isBlankSpaceClicked}
                         onDoubleClick = {onIconDoubleClickHandler}
                     />
@@ -128,8 +170,64 @@ function DesktopScreen () {
                     />
 
                     <DesktopIcon
-                        iconName={"React"}
-                        imageUrl={"reactIcon.png"}                        
+                        iconName={"Unity"}
+                        imageUrl={"unityIcon.png"}                        
+                        wasParentComponentClicked = {isBlankSpaceClicked}
+                        onDoubleClick = {onIconDoubleClickHandler}
+                    />
+
+                    <DesktopIcon
+                        iconName={"Blender"}
+                        imageUrl={"blenderIcon.png"}                        
+                        wasParentComponentClicked = {isBlankSpaceClicked}
+                        onDoubleClick = {onIconDoubleClickHandler}
+                    />                    
+
+                    <DesktopIcon
+                        iconName={"Visual Studio"}
+                        imageUrl={"vsStudioIcon.png"}                        
+                        wasParentComponentClicked = {isBlankSpaceClicked}
+                        onDoubleClick = {onIconDoubleClickHandler}
+                    />
+
+                    <DesktopIcon
+                        iconName={"Visual Studio Code"}
+                        imageUrl={"vsCodeIcon.png"}                        
+                        wasParentComponentClicked = {isBlankSpaceClicked}
+                        onDoubleClick = {onIconDoubleClickHandler}
+                    />
+
+                    <DesktopIcon
+                        iconName={"Unreal"}
+                        imageUrl={"unrealIcon.png"}                        
+                        wasParentComponentClicked = {isBlankSpaceClicked}
+                        onDoubleClick = {onIconDoubleClickHandler}
+                    />
+
+                    <DesktopIcon
+                        iconName={"Notepad++"}
+                        imageUrl={"notepadPPIcon.png"}                        
+                        wasParentComponentClicked = {isBlankSpaceClicked}
+                        onDoubleClick = {onIconDoubleClickHandler}
+                    />
+
+                    <DesktopIcon
+                        iconName={"Steam"}
+                        imageUrl={"steamIcon.png"}                        
+                        wasParentComponentClicked = {isBlankSpaceClicked}
+                        onDoubleClick = {onIconDoubleClickHandler}
+                    />
+
+                    <DesktopIcon
+                        iconName={"Three JS"}
+                        imageUrl={"threeJsIcon.png"}                        
+                        wasParentComponentClicked = {isBlankSpaceClicked}
+                        onDoubleClick = {onIconDoubleClickHandler}
+                    />
+
+                    <DesktopIcon
+                        iconName={"Resume"}
+                        imageUrl={"resumeIcon.png"}                        
                         wasParentComponentClicked = {isBlankSpaceClicked}
                         onDoubleClick = {onIconDoubleClickHandler}
                     />
@@ -142,11 +240,13 @@ function DesktopScreen () {
                     />
 
                     <DesktopIcon
-                        iconName={"Github"}
-                        imageUrl={"githubIcon.png"}                        
+                        iconName={"Youtube"}
+                        imageUrl={"youtubeIcon.png"}                        
                         wasParentComponentClicked = {isBlankSpaceClicked}
                         onDoubleClick = {onIconDoubleClickHandler}
-                    />
+                    />                   
+                    
+                    
                 </div>
 
                 <DesktopAppWindow appToRender = {"Pong"} isAppActive = {isPongOpen} onAppClosedCallback={closeDesktopAppWindow}/>
