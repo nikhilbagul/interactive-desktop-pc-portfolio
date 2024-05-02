@@ -1,8 +1,35 @@
 #start-menu
 {
     position: absolute;
-    height: 40%;
-    width: 300px;
+    height: 50%;
+    width: 350px;
     bottom: 50px;
     background-color: rgba(0, 0, 0, 0.7);
+}
+
+#os-label
+{
+    position: absolute;
+    float: left;
+    height: 100%;
+    width: 50px;
+    background-color: rgba(141, 141, 141, 0.3);       
+}
+
+#os-label-text
+{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    text-orientation: sideways;
+    writing-mode: tb-rl;
+    transform: scale(-1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Use Segoe UI font */
+    font-weight: 400;
+    letter-spacing: 1px;    
+    color:rgb(195, 198, 202);
+    font-size: 32px; /* Set the font size */ 
+    display: flex;
+    justify-content: center; /* Horizontal alignment */
+    align-items: center   
 }

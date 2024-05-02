@@ -9,7 +9,7 @@
     height: 753px;
     border-left: 1px solid;
     border-right: 1px solid;
-    border-bottom: 1px solid;    
+    border-bottom: 1px solid;
     border-color: rgb(220, 220, 220);
 }
 
@@ -24,7 +24,7 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    align-items: center;    
+    align-items: center;
 }
 
 #topbar-hitbox
@@ -36,21 +36,23 @@
 
 .topbarButtons
 {
-    padding: 8px;    
+    padding: 8px;
     width: 16px;
     height: 16px;
     background-color: rgb(220, 220, 220);
     opacity: 0.7;
 }
 
-#app-canvas {
-    position: static;   
+#app-canvas
+{
+    position: static;
     width: 100%;
     height: 720px;
     background-color: aliceblue;
 }
 
-#close:hover {
+#close:hover
+{
     background-color: red; /* Change background color on hover */
 }
 
