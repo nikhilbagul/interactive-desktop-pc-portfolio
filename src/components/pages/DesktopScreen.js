@@ -38,7 +38,10 @@ function DesktopScreen () {
         if(appName === "Youtube")
             setIsYoutubeOpen(true);
         if(appName === "Behance")
-            setIsBehanceOpen(true);
+            window.open('https://www.behance.net/notobelooselyshunted', '_blank');
+        if(appName === "Github")
+            window.open('https://github.com/nikhilbagul', '_blank');
+
     };   
 
     const closeDesktopAppWindow = (appName) => {
@@ -137,12 +140,19 @@ function DesktopScreen () {
                         wasParentComponentClicked = {isBlankSpaceClicked}
                         onDoubleClick = {onIconDoubleClickHandler}
                     />
+
+                    <DesktopIcon
+                        iconName={"Github"}
+                        imageUrl={"githubIcon.png"}                        
+                        wasParentComponentClicked = {isBlankSpaceClicked}
+                        onDoubleClick = {onIconDoubleClickHandler}
+                    />
                 </div>
 
                 <DesktopAppWindow appToRender = {"Pong"} isAppActive = {isPongOpen} onAppClosedCallback={closeDesktopAppWindow}/>
                 <DesktopAppWindow appToRender = {"Youtube"} isAppActive = {isYoutubeOpen} onAppClosedCallback={closeDesktopAppWindow}/>
                 <DesktopAppWindow appToRender = {"Resume"} isAppActive = {isResumeOpen} onAppClosedCallback={closeDesktopAppWindow}/>
-                <DesktopAppWindow appToRender = {"Behance"} isAppActive = {isBehanceOpen} onAppClosedCallback={closeDesktopAppWindow}/>
+                {/* <DesktopAppWindow appToRender = {"Behance"} isAppActive = {isBehanceOpen} onAppClosedCallback={closeDesktopAppWindow}/> */}
                 
             </div>
 
@@ -164,7 +174,7 @@ function DesktopScreen () {
 
                 {isPongOpen && <TaskbarAppIcon appName={"Pong"} imageUrl={"pongIcon.png"} isAppMaximized={true} /> }
                 {isResumeOpen && <TaskbarAppIcon appName={"Resume"} imageUrl={"resumeIcon.png"} isAppMaximized={true} /> }
-                {isBehanceOpen && <TaskbarAppIcon appName={"Behance"} imageUrl={"behanceIcon.png"} isAppMaximized={true} /> }
+                {/* {isBehanceOpen && <TaskbarAppIcon appName={"Behance"} imageUrl={"behanceIcon.png"} isAppMaximized={true} /> } */}
                 {isYoutubeOpen && <TaskbarAppIcon appName={"Youtube"} imageUrl={"youtubeIcon.png"} isAppMaximized={true} /> }
                 
 

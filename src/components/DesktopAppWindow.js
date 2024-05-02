@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import './DesktopAppWindow.css';
 import PongIframeComponent from "./iframeComponents/PongGame";
 import YoutubeIframeComponent from "./iframeComponents/Youtube";
+import BehanceIframeComponent from "./iframeComponents/Behance";
 
 function DesktopAppWindow ({ appToRender, isAppActive, onAppClosedCallback }) {    
     
@@ -19,11 +20,11 @@ function DesktopAppWindow ({ appToRender, isAppActive, onAppClosedCallback }) {
     }, []);
 
     const [showPongApp, setPongAppToActive] = useState(false);
-    const [showBehanceApp, setBehanceAppToActive] = useState(false);
+    //const [showBehanceApp, setBehanceAppToActive] = useState(false);
     const [showYoutubeApp, setYoutubeAppToActive] = useState(false);   
 
     useEffect(() => {
-        console.log(appToRender)        
+        console.log(appToRender)       
 
         if(appToRender === "Pong" && isAppActive)
         {            
@@ -42,6 +43,15 @@ function DesktopAppWindow ({ appToRender, isAppActive, onAppClosedCallback }) {
         {            
             setYoutubeAppToActive(false);
         }
+
+        // if(appToRender === "Behance" && isAppActive)
+        // {            
+        //     setBehanceAppToActive(true);
+        // }
+        // else if(appToRender === "Behance" && !isAppActive)
+        // {            
+        //     setBehanceAppToActive(false);
+        // }
         
     }, [isAppActive]);
 
@@ -96,7 +106,7 @@ function DesktopAppWindow ({ appToRender, isAppActive, onAppClosedCallback }) {
                 </div>
                 <div id="app-canvas">
                     {showPongApp && <PongIframeComponent/>}
-                    {showYoutubeApp && <YoutubeIframeComponent/>}
+                    {showYoutubeApp && <YoutubeIframeComponent/>}                    
                 </div>
             </div>
             }
