@@ -254,6 +254,8 @@ function DesktopScreen () {
                 <DesktopAppWindow appToRender = {"Resume"} isAppActive = {isResumeOpen} onAppClosedCallback={closeDesktopAppWindow}/>
                 {/* <DesktopAppWindow appToRender = {"Behance"} isAppActive = {isBehanceOpen} onAppClosedCallback={closeDesktopAppWindow}/> */}
                 
+               
+
             </div>
 
             {isStartMenuOpen && <StartMenu />}
