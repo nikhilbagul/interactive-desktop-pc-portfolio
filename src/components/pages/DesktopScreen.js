@@ -5,6 +5,7 @@ import moment from 'moment';
 import StartMenu from "./StartMenu";
 import DesktopIcon from "./DesktopIcon";
 import TaskbarAppIcon from "../TaskbarAppIcon";
+import WeatherWidget from "../WeatherWidget";
 
 function DesktopScreen () {
 
@@ -97,7 +98,7 @@ function DesktopScreen () {
 
     // Use an effect to update the date and time every second
     useEffect(() => {
-        const interval = setInterval(updateDateTime, 5000);
+        const interval = setInterval(updateDateTime, 2000);
         return () => clearInterval(interval);
     }, []);
 
@@ -252,11 +253,15 @@ function DesktopScreen () {
                 <DesktopAppWindow appToRender = {"Pong"} isAppActive = {isPongOpen} onAppClosedCallback={closeDesktopAppWindow}/>
                 <DesktopAppWindow appToRender = {"Youtube"} isAppActive = {isYoutubeOpen} onAppClosedCallback={closeDesktopAppWindow}/>
                 <DesktopAppWindow appToRender = {"Resume"} isAppActive = {isResumeOpen} onAppClosedCallback={closeDesktopAppWindow}/>
-                {/* <DesktopAppWindow appToRender = {"Behance"} isAppActive = {isBehanceOpen} onAppClosedCallback={closeDesktopAppWindow}/> */}
-                
-               
+                {/* <DesktopAppWindow appToRender = {"Behance"} isAppActive = {isBehanceOpen} onAppClosedCallback={closeDesktopAppWindow}/> */}                  
+
+            <div id="weather-widget">
+                <WeatherWidget />
+            </div>            
 
             </div>
+
+            
 
             {isStartMenuOpen && <StartMenu />}
 
