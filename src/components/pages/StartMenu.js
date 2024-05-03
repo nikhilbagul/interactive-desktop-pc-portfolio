@@ -13,7 +13,11 @@ const StartMenu = ( {loadLockScreen} ) => {
             <div id="os-label">                
                 <p id="os-label-text">NootNoot OS</p>                
                 <img id="settings-button" src='settingsIcon.png' />                
-                <img id="power-button" src='powerIcon.png' onClick={handlePowerOffClick} />
+                <img 
+                    id="power-button" 
+                    src='powerIcon.png' 
+                    onClick={handlePowerOffClick}                    
+                />
             </div>
         </div>                
     </div>

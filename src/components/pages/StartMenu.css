@@ -29,6 +29,11 @@
     color: rgb(100, 100, 100);
 }
 
+#power-button:hover
+{
+    background-color: #F1532E;
+}
+
 #settings-button
 {
     position: relative;
@@ -37,6 +42,11 @@
     padding: 28%;
     object-fit: contain;
     color: rgb(100, 100, 100);
+}
+
+#settings-button:hover
+{
+    background-color: #5f5f5f;
 }
 
 #os-label-text
