@@ -22,7 +22,7 @@ const ClockWidget = () => {
 
     // Use an effect to update the date and time every second
     useEffect(() => {
-        const interval = setInterval(updateDateTime, 1000);
+        const interval = setInterval(updateDateTime, 100);
         return () => clearInterval(interval);
     }, []);
 

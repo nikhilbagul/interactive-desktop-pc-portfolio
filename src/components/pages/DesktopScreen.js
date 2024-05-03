@@ -7,7 +7,7 @@ import DesktopIcon from "./DesktopIcon";
 import TaskbarAppIcon from "../TaskbarAppIcon";
 import WeatherWidget from "../WeatherWidget";
 
-function DesktopScreen () {
+const DesktopScreen = ({loadLockScreen}) => {
 
     // change component state when user request to open any app from desktop screen
     const [startButtonColor, setStartButtonColor] = useState('#000000'); // Initial background color    
@@ -263,7 +263,7 @@ function DesktopScreen () {
 
             
 
-            {isStartMenuOpen && <StartMenu />}
+            {isStartMenuOpen && <StartMenu loadLockScreen = {loadLockScreen} /> }
 
             <div className = "taskbar" >
                 <img 

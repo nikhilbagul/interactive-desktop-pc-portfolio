@@ -5,24 +5,27 @@ import { useState } from 'react';
 
 function App() {
 
-  const [ showDesktopScreen, setDesktopScreenState ] = useState(false);
-  const toggleDesktopScreen = () =>
+  const [ isLockScreenActive, setLockScreenState ] = useState(true);
+  const [ isDesktopScreenActive, setDesktopScreenState ] = useState(false);
+  const loadDesktopScreen = () =>
   {
-      setDesktopScreenState(!showDesktopScreen);  
+      setDesktopScreenState(true);
+      setLockScreenState(false);  
   }
 
-  const [ showLockScreen, setLockScreenState ] = useState(true);
-  
+  const loadLockScreen = () =>
+  {
+      setDesktopScreenState(false);
+      setLockScreenState(true);  
+  }
 
   return (
-    <div className="App">      
-        { 
-        showLockScreen && 
-        !showDesktopScreen && 
-        <LockScreen loadDesktopScreen = { toggleDesktopScreen } /> 
-        }
+    <div className="App">
 
-        { showDesktopScreen && <DesktopScreen/> }
+        { isLockScreenActive && !isDesktopScreenActive && <LockScreen loadDesktopScreen = { loadDesktopScreen } /> }
+
+        { !isLockScreenActive && isDesktopScreenActive && <DesktopScreen loadLockScreen = { loadLockScreen } /> }
+
     </div>
   );
 }
