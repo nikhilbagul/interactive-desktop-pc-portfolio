@@ -12,7 +12,8 @@ const StartMenu = ( {loadLockScreen} ) => {
         <div id="start-menu">
             <div id="os-label">                
                 <p id="os-label-text">NootNoot OS</p>                
-                <img id="settings-button" src='settingsIcon.png' />                
+                <img id="profile-button" src='profPic.jpg' />
+                <img id="settings-button" src='settingsIcon.png' />
                 <img 
                     id="power-button" 
                     src='powerIcon.png' 

@@ -49,6 +49,18 @@
     background-color: #5f5f5f;
 }
 
+#profile-button
+{
+    position: relative;
+    height: 30px;
+    width: 30px;
+    padding: 10px;
+    object-fit: contain;
+    color: rgb(100, 100, 100);
+    border-radius: 50%;
+    
+}
+
 #os-label-text
 {
     position: relative;
