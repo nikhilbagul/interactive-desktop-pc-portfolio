@@ -17,6 +17,7 @@ const DesktopScreen = ({loadLockScreen}) => {
     const [isBehanceOpen, setIsBehanceOpen] = useState(false);
     const [isYoutubeOpen, setIsYoutubeOpen] = useState(false);
     const [isPongOpen, setIsPongOpen] = useState(false);
+    //const [isOldPortfolioOpen, setIsOldPortfolioOpen] = useState(false);
 
     const handleBlankSpaceClick = () => {        
         setIsBlankSpaceClicked(true); // Update state to indicate the parent component was clicked        
@@ -42,6 +43,8 @@ const DesktopScreen = ({loadLockScreen}) => {
             window.open('https://www.behance.net/notobelooselyshunted', '_blank');
         if(appName === "Github")
             window.open('https://github.com/nikhilbagul', '_blank');
+        if(appName === "portfolio_deprecated")
+            window.open('https://nikhilbagul.webflow.io', '_blank');
 
     };   
 
@@ -213,6 +216,13 @@ const DesktopScreen = ({loadLockScreen}) => {
                     />
 
                     <DesktopIcon
+                        iconName={"portfolio_deprecated"}
+                        imageUrl={"coding.png"}                        
+                        wasParentComponentClicked = {isBlankSpaceClicked}
+                        onDoubleClick = {onIconDoubleClickHandler}
+                    />     
+
+                    <DesktopIcon
                         iconName={"Steam"}
                         imageUrl={"steamIcon.png"}                        
                         wasParentComponentClicked = {isBlankSpaceClicked}
@@ -245,8 +255,7 @@ const DesktopScreen = ({loadLockScreen}) => {
                         imageUrl={"youtubeIcon.png"}                        
                         wasParentComponentClicked = {isBlankSpaceClicked}
                         onDoubleClick = {onIconDoubleClickHandler}
-                    />                   
-                    
+                    />
                     
                 </div>
 
