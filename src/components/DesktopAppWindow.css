@@ -12,6 +12,8 @@
     border-bottom: 1px solid;
     border-color: rgb(220, 220, 220);
     z-index: 1;
+    /* resize: both; */
+    overflow: hidden;
 }
 
 #topbar

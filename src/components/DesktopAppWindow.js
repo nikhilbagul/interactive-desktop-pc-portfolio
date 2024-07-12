@@ -67,10 +67,11 @@ function DesktopAppWindow ({ appToRender, isAppActive, onAppClosedCallback }) {
         if(appToRender === "Resume" && isAppActive)
         {            
             setResumeAppToActive(true);
+            document.getElementById('desktop-app-container').style.resize = 'both';
         }
         else if(appToRender === "Resume" && !isAppActive)
         {            
-            setResumeAppToActive(false);
+            setResumeAppToActive(false);            
         }
         
     }, [isAppActive]);
@@ -108,30 +109,30 @@ function DesktopAppWindow ({ appToRender, isAppActive, onAppClosedCallback }) {
 
 
     return(
-        <div>
+        <>
             {   
                 isAppActive && 
                 <div id="desktop-app-container"
                     style={{ top: containerPosition.y, left: containerPosition.x }}
                 >
-                <div id="topbar">
-                    <div id="topbar-hitbox" 
-                        onMouseDown={startDrag}                        
-                        onMouseMove={onDrag}
-                        onMouseUp={stopDrag}
-                    />
-                    <img className="topbarButtons" id="minimize" src="MinimizeWindow.png" />
-                    <img className="topbarButtons" id="restoreDown" src="RestoreDownWindow.png" />
-                    <img className="topbarButtons" id="close" src="CloseWindow.png" onClick={onCloseWindowClicked} />
-                </div>
-                <div id="app-canvas">
-                    {showPongApp && <PongIframeComponent/>}
-                    {showYoutubeApp && <YoutubeIframeComponent/>}   
-                    {showResumeApp && <ResumeDesktopAppComponent />}                 
-                </div>
+                    <div id="topbar">
+                        <div id="topbar-hitbox" 
+                            onMouseDown={startDrag}                        
+                            onMouseMove={onDrag}
+                            onMouseUp={stopDrag}
+                        />
+                        <img className="topbarButtons" id="minimize" src="MinimizeWindow.png" />
+                        <img className="topbarButtons" id="restoreDown" src="RestoreDownWindow.png" />
+                        <img className="topbarButtons" id="close" src="CloseWindow.png" onClick={onCloseWindowClicked} />
+                    </div>
+                    <div id="app-canvas">
+                        {showPongApp && <PongIframeComponent/>}
+                        {showYoutubeApp && <YoutubeIframeComponent/>}   
+                        {showResumeApp && <ResumeDesktopAppComponent />}                 
+                    </div>
             </div>
             }
-        </div>        
+        </>        
     );    
 
 }
