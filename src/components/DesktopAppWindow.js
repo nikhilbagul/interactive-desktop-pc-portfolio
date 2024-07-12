@@ -29,7 +29,7 @@ function DesktopAppWindow ({ appToRender, isAppActive, onAppClosedCallback }) {
         if (appToRender === "Resume")
         {
             containerWidth = 1280; // Adjust as needed
-            containerHeight = 900; // Adjust as needed            
+            containerHeight = 850; // Adjust as needed            
         }
         
         const initialX = (screenWidth - containerWidth) / 2;
