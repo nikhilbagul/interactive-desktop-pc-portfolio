@@ -29,8 +29,7 @@ function DesktopAppWindow ({ appToRender, isAppActive, onAppClosedCallback }) {
         if (appToRender === "Resume")
         {
             containerWidth = 1280; // Adjust as needed
-            containerHeight = 1000; // Adjust as needed
-            console.log("here")   
+            containerHeight = 900; // Adjust as needed            
         }
         
         const initialX = (screenWidth - containerWidth) / 2;
@@ -44,7 +43,7 @@ function DesktopAppWindow ({ appToRender, isAppActive, onAppClosedCallback }) {
     const [showResumeApp, setResumeAppToActive] = useState(false);
 
     useEffect(() => {
-        console.log(appToRender)       
+        //console.log(appToRender)       
 
         if(appToRender === "Pong" && isAppActive)
         {            

@@ -4,8 +4,7 @@ import './StartButton.css';
 const StartButton = ( {loadDesktopScreen} ) => {
     
     // Handle button click event
-    const handleClick = () => {
-        console.log('Button clicked!  Load Desktop Screen');
+    const handleClick = () => {        
         loadDesktopScreen();
     };
 
