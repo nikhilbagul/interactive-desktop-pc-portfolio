@@ -2,26 +2,46 @@ import React, { useEffect, useState } from "react";
 import './DesktopAppWindow.css';
 import PongIframeComponent from "./iframeComponents/PongGame";
 import YoutubeIframeComponent from "./iframeComponents/Youtube";
-import BehanceIframeComponent from "./iframeComponents/Behance";
+import ResumeDesktopAppComponent from "./ResumeDesktopApp";
 
 function DesktopAppWindow ({ appToRender, isAppActive, onAppClosedCallback }) {    
     
     // Calculate initial position of the container
     useEffect(() => {
+
         const screenWidth = window.innerWidth;
         const screenHeight = window.innerHeight;
-        const containerWidth = 1280; // Adjust as needed
-        const containerHeight = 720; // Adjust as needed
-
+        var containerWidth = 0;
+        var containerHeight = 0;
+        
+        if (appToRender === "Pong")
+        {
+            containerWidth = 1280; // Adjust as needed
+            containerHeight = 720; // Adjust as needed
+        }
+        
+        if (appToRender === "Youtube")
+        {
+            containerWidth = 1280; // Adjust as needed
+            containerHeight = 720; // Adjust as needed
+        }
+        
+        if (appToRender === "Resume")
+        {
+            containerWidth = 1280; // Adjust as needed
+            containerHeight = 1000; // Adjust as needed
+            console.log("here")   
+        }
+        
         const initialX = (screenWidth - containerWidth) / 2;
         const initialY = (screenHeight - containerHeight) / 2;
 
         setContainerPosition({ x: initialX, y: initialY });
-    }, []);
+    }, [isAppActive]);
 
-    const [showPongApp, setPongAppToActive] = useState(false);
-    //const [showBehanceApp, setBehanceAppToActive] = useState(false);
-    const [showYoutubeApp, setYoutubeAppToActive] = useState(false);   
+    const [showPongApp, setPongAppToActive] = useState(false);    
+    const [showYoutubeApp, setYoutubeAppToActive] = useState(false);
+    const [showResumeApp, setResumeAppToActive] = useState(false);
 
     useEffect(() => {
         console.log(appToRender)       
@@ -44,14 +64,14 @@ function DesktopAppWindow ({ appToRender, isAppActive, onAppClosedCallback }) {
             setYoutubeAppToActive(false);
         }
 
-        // if(appToRender === "Behance" && isAppActive)
-        // {            
-        //     setBehanceAppToActive(true);
-        // }
-        // else if(appToRender === "Behance" && !isAppActive)
-        // {            
-        //     setBehanceAppToActive(false);
-        // }
+        if(appToRender === "Resume" && isAppActive)
+        {            
+            setResumeAppToActive(true);
+        }
+        else if(appToRender === "Resume" && !isAppActive)
+        {            
+            setResumeAppToActive(false);
+        }
         
     }, [isAppActive]);
 
@@ -106,7 +126,8 @@ function DesktopAppWindow ({ appToRender, isAppActive, onAppClosedCallback }) {
                 </div>
                 <div id="app-canvas">
                     {showPongApp && <PongIframeComponent/>}
-                    {showYoutubeApp && <YoutubeIframeComponent/>}                    
+                    {showYoutubeApp && <YoutubeIframeComponent/>}   
+                    {showResumeApp && <ResumeDesktopAppComponent />}                 
                 </div>
             </div>
             }

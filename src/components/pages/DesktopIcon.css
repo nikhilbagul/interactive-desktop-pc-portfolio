@@ -28,5 +28,5 @@
     text-align: center; /* Center the text horizontally */
     color:aliceblue;
     font-size: 12px; /* Set the font size */
-    /* word-wrap: break-word; */
+    word-wrap: break-word;
 }

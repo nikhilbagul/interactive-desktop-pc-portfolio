@@ -21,14 +21,14 @@ const DesktopScreen = ({loadLockScreen}) => {
 
     const handleBlankSpaceClick = () => {        
         setIsBlankSpaceClicked(true); // Update state to indicate the parent component was clicked        
-        console.log("parent div clicked");        
+        //console.log("parent div clicked");        
         // Reset parentClicked prop after click
         setTimeout(() => {
             setIsBlankSpaceClicked(false); 
         }, 100);
     };   
 
-    console.log('comp rendered');
+    //console.log('comp rendered');
 
     const onIconDoubleClickHandler = (appName) => {        
         //console.log(`Double clicked on ${appName}`);

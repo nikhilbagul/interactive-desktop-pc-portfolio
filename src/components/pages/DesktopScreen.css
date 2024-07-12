@@ -1,5 +1,5 @@
 .bg-image {
-    background-image: url(/public/FirewatchScreens4.jpg);
+    background-image: url(/public/FirewatchScreens4.webp);
     background-size: cover; 
     filter: blur(3px); /* Adjust the blur level as desired */
     /* Set rules to fill background */
