@@ -81,14 +81,14 @@ function DesktopAppWindow ({ appToRender, isAppActive, onAppClosedCallback }) {
             setResumeAppToActive(false);            
         }
 
-        if(appToRender === "AGodlikeGoodKid" && isAppActive)
-        {            
-            setAGGKAppToActive(true);            
-        }
-        else if(appToRender === "AGodlikeGoodKid" && !isAppActive)
-        {            
-            setAGGKAppToActive(false);            
-        }
+        // if(appToRender === "AGodlikeGoodKid" && isAppActive)
+        // {            
+        //     setAGGKAppToActive(true);            
+        // }
+        // else if(appToRender === "AGodlikeGoodKid" && !isAppActive)
+        // {            
+        //     setAGGKAppToActive(false);            
+        // }
         
     }, [isAppActive]);
 
@@ -145,7 +145,7 @@ function DesktopAppWindow ({ appToRender, isAppActive, onAppClosedCallback }) {
                         {showPongApp && <PongIframeComponent/>}
                         {showYoutubeApp && <YoutubeIframeComponent/>}   
                         {showResumeApp && <ResumeDesktopAppComponent />}
-                        {showAGGKApp && <AGGKIframeComponent />}
+                        {/* {showAGGKApp && <AGGKIframeComponent />} */}
                     </div>
             </div>
             }

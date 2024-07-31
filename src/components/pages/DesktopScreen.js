@@ -47,7 +47,10 @@ const DesktopScreen = ({loadLockScreen}) => {
         if(appName === "portfolio_deprecated")
             window.open('https://nikhilbagul.webflow.io', '_blank');
         if(appName === "AGodlikeGoodKid")
-            setIsAGGKOpen(true);
+        {
+            window.open('https://a-godlike-good-kid.vercel.app/', '_blank');
+            //setIsAGGKOpen(true);
+        }
 
     };   
 
@@ -61,8 +64,8 @@ const DesktopScreen = ({loadLockScreen}) => {
             setIsYoutubeOpen(false);
         if(appName === "Behance" && isBehanceOpen)
             setIsBehanceOpen(false);
-        if(appName === "AGodlikeGoodKid")
-            setIsAGGKOpen(false);
+        // if(appName === "AGodlikeGoodKid")
+        //     setIsAGGKOpen(false);
     }
 
     const handleStartButtonMouseEnter = () => {
@@ -274,7 +277,7 @@ const DesktopScreen = ({loadLockScreen}) => {
                 <DesktopAppWindow appToRender = {"Pong"} isAppActive = {isPongOpen} onAppClosedCallback={closeDesktopAppWindow}/>
                 <DesktopAppWindow appToRender = {"Youtube"} isAppActive = {isYoutubeOpen} onAppClosedCallback={closeDesktopAppWindow}/>
                 <DesktopAppWindow appToRender = {"Resume"} isAppActive = {isResumeOpen} onAppClosedCallback={closeDesktopAppWindow}/>
-                <DesktopAppWindow appToRender = {"AGodlikeGoodKid"} isAppActive = {isAGGKOpen} onAppClosedCallback={closeDesktopAppWindow}/>
+                {/* <DesktopAppWindow appToRender = {"AGodlikeGoodKid"} isAppActive = {isAGGKOpen} onAppClosedCallback={closeDesktopAppWindow}/> */}
 
                 {/* <DesktopAppWindow appToRender = {"Behance"} isAppActive = {isBehanceOpen} onAppClosedCallback={closeDesktopAppWindow}/> */}                  
 
