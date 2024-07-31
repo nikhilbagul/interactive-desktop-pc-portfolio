@@ -3,6 +3,7 @@ import './DesktopAppWindow.css';
 import PongIframeComponent from "./iframeComponents/PongGame";
 import YoutubeIframeComponent from "./iframeComponents/Youtube";
 import ResumeDesktopAppComponent from "./ResumeDesktopApp";
+import AGGKIframeComponent from "./iframeComponents/AGodlikeGoodKid";
 
 function DesktopAppWindow ({ appToRender, isAppActive, onAppClosedCallback }) {    
     
@@ -31,6 +32,12 @@ function DesktopAppWindow ({ appToRender, isAppActive, onAppClosedCallback }) {
             containerWidth = 1280; // Adjust as needed
             containerHeight = 850; // Adjust as needed            
         }
+
+        if (appToRender === "AGodlikeGoodKid")
+        {
+            containerWidth = 769; // Adjust as needed
+            containerHeight = 1024; // Adjust as needed            
+        }
         
         const initialX = (screenWidth - containerWidth) / 2;
         const initialY = (screenHeight - containerHeight) / 2;
@@ -41,6 +48,7 @@ function DesktopAppWindow ({ appToRender, isAppActive, onAppClosedCallback }) {
     const [showPongApp, setPongAppToActive] = useState(false);    
     const [showYoutubeApp, setYoutubeAppToActive] = useState(false);
     const [showResumeApp, setResumeAppToActive] = useState(false);
+    const [showAGGKApp, setAGGKAppToActive] = useState(false);
 
     useEffect(() => {
         //console.log(appToRender)       
@@ -71,6 +79,15 @@ function DesktopAppWindow ({ appToRender, isAppActive, onAppClosedCallback }) {
         else if(appToRender === "Resume" && !isAppActive)
         {            
             setResumeAppToActive(false);            
+        }
+
+        if(appToRender === "AGodlikeGoodKid" && isAppActive)
+        {            
+            setAGGKAppToActive(true);            
+        }
+        else if(appToRender === "AGodlikeGoodKid" && !isAppActive)
+        {            
+            setAGGKAppToActive(false);            
         }
         
     }, [isAppActive]);
@@ -127,7 +144,8 @@ function DesktopAppWindow ({ appToRender, isAppActive, onAppClosedCallback }) {
                     <div id="app-canvas">
                         {showPongApp && <PongIframeComponent/>}
                         {showYoutubeApp && <YoutubeIframeComponent/>}   
-                        {showResumeApp && <ResumeDesktopAppComponent />}                 
+                        {showResumeApp && <ResumeDesktopAppComponent />}
+                        {showAGGKApp && <AGGKIframeComponent />}
                     </div>
             </div>
             }

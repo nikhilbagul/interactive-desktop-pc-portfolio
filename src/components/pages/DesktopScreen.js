@@ -17,6 +17,7 @@ const DesktopScreen = ({loadLockScreen}) => {
     const [isBehanceOpen, setIsBehanceOpen] = useState(false);
     const [isYoutubeOpen, setIsYoutubeOpen] = useState(false);
     const [isPongOpen, setIsPongOpen] = useState(false);
+    const [isAGGKOpen, setIsAGGKOpen] = useState(false);
     //const [isOldPortfolioOpen, setIsOldPortfolioOpen] = useState(false);
 
     const handleBlankSpaceClick = () => {        
@@ -45,6 +46,8 @@ const DesktopScreen = ({loadLockScreen}) => {
             window.open('https://github.com/nikhilbagul', '_blank');
         if(appName === "portfolio_deprecated")
             window.open('https://nikhilbagul.webflow.io', '_blank');
+        if(appName === "AGodlikeGoodKid")
+            setIsAGGKOpen(true);
 
     };   
 
@@ -58,6 +61,8 @@ const DesktopScreen = ({loadLockScreen}) => {
             setIsYoutubeOpen(false);
         if(appName === "Behance" && isBehanceOpen)
             setIsBehanceOpen(false);
+        if(appName === "AGodlikeGoodKid")
+            setIsAGGKOpen(false);
     }
 
     const handleStartButtonMouseEnter = () => {
@@ -256,12 +261,21 @@ const DesktopScreen = ({loadLockScreen}) => {
                         wasParentComponentClicked = {isBlankSpaceClicked}
                         onDoubleClick = {onIconDoubleClickHandler}
                     />
+
+                    <DesktopIcon
+                        iconName={"AGodlikeGoodKid"}
+                        imageUrl={"aggkIcon.webp"}                        
+                        wasParentComponentClicked = {isBlankSpaceClicked}
+                        onDoubleClick = {onIconDoubleClickHandler}
+                    />
                     
                 </div>
 
                 <DesktopAppWindow appToRender = {"Pong"} isAppActive = {isPongOpen} onAppClosedCallback={closeDesktopAppWindow}/>
                 <DesktopAppWindow appToRender = {"Youtube"} isAppActive = {isYoutubeOpen} onAppClosedCallback={closeDesktopAppWindow}/>
                 <DesktopAppWindow appToRender = {"Resume"} isAppActive = {isResumeOpen} onAppClosedCallback={closeDesktopAppWindow}/>
+                <DesktopAppWindow appToRender = {"AGodlikeGoodKid"} isAppActive = {isAGGKOpen} onAppClosedCallback={closeDesktopAppWindow}/>
+
                 {/* <DesktopAppWindow appToRender = {"Behance"} isAppActive = {isBehanceOpen} onAppClosedCallback={closeDesktopAppWindow}/> */}                  
 
             <div id="weather-widget">
@@ -292,6 +306,7 @@ const DesktopScreen = ({loadLockScreen}) => {
                 {isResumeOpen && <TaskbarAppIcon appName={"Resume"} imageUrl={"resumeIcon.png"} isAppMaximized={true} /> }
                 {/* {isBehanceOpen && <TaskbarAppIcon appName={"Behance"} imageUrl={"behanceIcon.png"} isAppMaximized={true} /> } */}
                 {isYoutubeOpen && <TaskbarAppIcon appName={"Youtube"} imageUrl={"youtubeIcon.png"} isAppMaximized={true} /> }
+                {isAGGKOpen && <TaskbarAppIcon appName={"AGodlikeGoodKid"} imageUrl={"aggkIcon.webp"} isAppMaximized={true} /> }
                 
 
                 <div id="clock-widget">
