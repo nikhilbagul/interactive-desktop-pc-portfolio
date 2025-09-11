@@ -41,7 +41,7 @@ function DesktopIcon({ iconName, imageUrl, wasParentComponentClicked, onDoubleCl
     return (
       <div className="desktopIcon"
         id={iconName}
-        style={{ backgroundColor: divColor, borderColor: divColor, opacity: isActive ? 1 : 0.5}}
+        style={{ backgroundColor: divColor, borderColor: divColor, opacity: isActive ? 1 : 0.25}}
         onClick={handleDesktopIconClick}
         onDoubleClick={handleDoubleClick}
         onMouseEnter={handleMouseEnter}
