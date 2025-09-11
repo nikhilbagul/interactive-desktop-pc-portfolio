@@ -123,6 +123,7 @@ const DesktopScreen = ({loadLockScreen}) => {
                         imageUrl={"recycleBinIcon.png"}                        
                         wasParentComponentClicked = {isBlankSpaceClicked}
                         onDoubleClick = {onIconDoubleClickHandler}
+                        isActive={false}
                     />
 
                     <DesktopIcon
@@ -130,6 +131,7 @@ const DesktopScreen = ({loadLockScreen}) => {
                         imageUrl={"myPcIcon.png"}                        
                         wasParentComponentClicked = {isBlankSpaceClicked}
                         onDoubleClick = {onIconDoubleClickHandler}
+                        isActive={false}
                     />
 
                     <DesktopIcon
@@ -137,6 +139,7 @@ const DesktopScreen = ({loadLockScreen}) => {
                         imageUrl={"cmdIcon.png"}                        
                         wasParentComponentClicked = {isBlankSpaceClicked}
                         onDoubleClick = {onIconDoubleClickHandler}
+                        isActive={false}
                     />
 
                     <DesktopIcon
@@ -144,6 +147,7 @@ const DesktopScreen = ({loadLockScreen}) => {
                         imageUrl={"chromeIcon.png"}                        
                         wasParentComponentClicked = {isBlankSpaceClicked}
                         onDoubleClick = {onIconDoubleClickHandler}
+                        isActive={false}
                     />
 
                     <DesktopIcon
@@ -151,6 +155,7 @@ const DesktopScreen = ({loadLockScreen}) => {
                         imageUrl={"firefoxIcon.png"}                        
                         wasParentComponentClicked = {isBlankSpaceClicked}
                         onDoubleClick = {onIconDoubleClickHandler}
+                        isActive={false}
                     />     
 
                     <DesktopIcon
@@ -158,6 +163,7 @@ const DesktopScreen = ({loadLockScreen}) => {
                         imageUrl={"reactIcon.png"}                        
                         wasParentComponentClicked = {isBlankSpaceClicked}
                         onDoubleClick = {onIconDoubleClickHandler}
+                        isActive={false}
                     />               
 
                     <DesktopIcon
@@ -165,6 +171,7 @@ const DesktopScreen = ({loadLockScreen}) => {
                         imageUrl={"githubIcon.png"}                        
                         wasParentComponentClicked = {isBlankSpaceClicked}
                         onDoubleClick = {onIconDoubleClickHandler}
+                        isActive={true}
                     />
 
                     <DesktopIcon
@@ -172,6 +179,7 @@ const DesktopScreen = ({loadLockScreen}) => {
                         imageUrl={"pixyzIcon.png"}                        
                         wasParentComponentClicked = {isBlankSpaceClicked}
                         onDoubleClick = {onIconDoubleClickHandler}
+                        isActive={false}
                     />
 
                     <DesktopIcon
@@ -179,6 +187,7 @@ const DesktopScreen = ({loadLockScreen}) => {
                         imageUrl={"behanceIcon.png"}                        
                         wasParentComponentClicked = {isBlankSpaceClicked}
                         onDoubleClick = {onIconDoubleClickHandler}
+                        isActive={true}
                     />
 
                     <DesktopIcon
@@ -186,6 +195,7 @@ const DesktopScreen = ({loadLockScreen}) => {
                         imageUrl={"unityIcon.png"}                        
                         wasParentComponentClicked = {isBlankSpaceClicked}
                         onDoubleClick = {onIconDoubleClickHandler}
+                        isActive={false}
                     />
 
                     <DesktopIcon
@@ -193,6 +203,7 @@ const DesktopScreen = ({loadLockScreen}) => {
                         imageUrl={"blenderIcon.png"}                        
                         wasParentComponentClicked = {isBlankSpaceClicked}
                         onDoubleClick = {onIconDoubleClickHandler}
+                        isActive={false}
                     />                    
 
                     <DesktopIcon
@@ -200,6 +211,7 @@ const DesktopScreen = ({loadLockScreen}) => {
                         imageUrl={"vsStudioIcon.png"}                        
                         wasParentComponentClicked = {isBlankSpaceClicked}
                         onDoubleClick = {onIconDoubleClickHandler}
+                        isActive={false}
                     />
 
                     <DesktopIcon
@@ -207,6 +219,7 @@ const DesktopScreen = ({loadLockScreen}) => {
                         imageUrl={"vsCodeIcon.png"}                        
                         wasParentComponentClicked = {isBlankSpaceClicked}
                         onDoubleClick = {onIconDoubleClickHandler}
+                        isActive={false}
                     />
 
                     <DesktopIcon
@@ -214,6 +227,7 @@ const DesktopScreen = ({loadLockScreen}) => {
                         imageUrl={"unrealIcon.png"}                        
                         wasParentComponentClicked = {isBlankSpaceClicked}
                         onDoubleClick = {onIconDoubleClickHandler}
+                        isActive={false}
                     />
 
                     <DesktopIcon
@@ -221,6 +235,7 @@ const DesktopScreen = ({loadLockScreen}) => {
                         imageUrl={"notepadPPIcon.png"}                        
                         wasParentComponentClicked = {isBlankSpaceClicked}
                         onDoubleClick = {onIconDoubleClickHandler}
+                        isActive={false}
                     />
 
                     <DesktopIcon
@@ -228,6 +243,7 @@ const DesktopScreen = ({loadLockScreen}) => {
                         imageUrl={"coding.png"}                        
                         wasParentComponentClicked = {isBlankSpaceClicked}
                         onDoubleClick = {onIconDoubleClickHandler}
+                        isActive={true}
                     />     
 
                     <DesktopIcon
@@ -235,6 +251,7 @@ const DesktopScreen = ({loadLockScreen}) => {
                         imageUrl={"steamIcon.png"}                        
                         wasParentComponentClicked = {isBlankSpaceClicked}
                         onDoubleClick = {onIconDoubleClickHandler}
+                        isActive={false}
                     />
 
                     <DesktopIcon
@@ -242,6 +259,7 @@ const DesktopScreen = ({loadLockScreen}) => {
                         imageUrl={"threeJsIcon.png"}                        
                         wasParentComponentClicked = {isBlankSpaceClicked}
                         onDoubleClick = {onIconDoubleClickHandler}
+                        isActive={false}
                     />
 
                     <DesktopIcon
@@ -249,6 +267,7 @@ const DesktopScreen = ({loadLockScreen}) => {
                         imageUrl={"resumeIcon.png"}                        
                         wasParentComponentClicked = {isBlankSpaceClicked}
                         onDoubleClick = {onIconDoubleClickHandler}
+                        isActive={true}
                     />
 
                     <DesktopIcon
@@ -256,6 +275,7 @@ const DesktopScreen = ({loadLockScreen}) => {
                         imageUrl={"pongIcon.png"}                        
                         wasParentComponentClicked = {isBlankSpaceClicked}
                         onDoubleClick = {onIconDoubleClickHandler}
+                        isActive={true}
                     />
 
                     <DesktopIcon
@@ -263,6 +283,7 @@ const DesktopScreen = ({loadLockScreen}) => {
                         imageUrl={"youtubeIcon.png"}                        
                         wasParentComponentClicked = {isBlankSpaceClicked}
                         onDoubleClick = {onIconDoubleClickHandler}
+                        isActive={true}
                     />
 
                     <DesktopIcon
@@ -270,6 +291,7 @@ const DesktopScreen = ({loadLockScreen}) => {
                         imageUrl={"aggkIcon.webp"}                        
                         wasParentComponentClicked = {isBlankSpaceClicked}
                         onDoubleClick = {onIconDoubleClickHandler}
+                        isActive={true}
                     />
                     
                 </div>

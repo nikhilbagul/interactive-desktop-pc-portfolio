@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import './DesktopIcon.css';
 
-function DesktopIcon({ iconName, imageUrl, wasParentComponentClicked, onDoubleClick }) {
+function DesktopIcon({ iconName, imageUrl, wasParentComponentClicked, onDoubleClick, isActive }) {
     
     //const [isHovering, setIsHovering] = useState(false);
     const [divColor, setDivColor] = useState('#ffffff00'); // Initial background color    
-    const [isSelected, setIsSelected] = useState(false);    
+    const [isSelected, setIsSelected] = useState(false);
+    
 
     // Update local state when propFromParent changes    
     useEffect(() => {        
@@ -40,7 +41,7 @@ function DesktopIcon({ iconName, imageUrl, wasParentComponentClicked, onDoubleCl
     return (
       <div className="desktopIcon"
         id={iconName}
-        style={{ backgroundColor: divColor, borderColor: divColor}}
+        style={{ backgroundColor: divColor, borderColor: divColor, opacity: isActive ? 1 : 0.5}}
         onClick={handleDesktopIconClick}
         onDoubleClick={handleDoubleClick}
         onMouseEnter={handleMouseEnter}

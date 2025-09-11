@@ -14,8 +14,7 @@
     height: 60px;
     width: 60px;
     padding: 5px;
-    object-fit: scale-down;
-    color: white;
+    object-fit: scale-down;        
 }
 
 .iconText
