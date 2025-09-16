@@ -1,10 +1,17 @@
 import './StartMenu.css'
+import { useRef } from "react"
 
 const StartMenu = ( {loadLockScreen} ) => {
+
+    const buttonClickAudioRef = useRef(new Audio("/sounds/clickSound02.wav"));
 
     // Handle Power Off / Logout button click
     const handlePowerOffClick = () => {
         loadLockScreen();
+
+        buttonClickAudioRef.current.currentTime = 0; // restart if clicked multiple times
+        buttonClickAudioRef.current.loop = false;    // ensure it does not loop
+        buttonClickAudioRef.current.play();
     };
 
     return(

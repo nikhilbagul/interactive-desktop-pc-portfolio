@@ -1,4 +1,3 @@
-import React from 'react';
 import StartButton from '../StartButton';
 import ClockWidget from '../ClockWidget';
 import './LockScreen.css';
