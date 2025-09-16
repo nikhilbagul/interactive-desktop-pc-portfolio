@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import './DesktopAppWindow.css';
 import PongIframeComponent from "./iframeComponents/PongGame";
 import YoutubeIframeComponent from "./iframeComponents/Youtube";
 import ResumeDesktopAppComponent from "./ResumeDesktopApp";
 import AGGKIframeComponent from "./iframeComponents/AGodlikeGoodKid";
 
-function DesktopAppWindow ({ appToRender, isAppActive, onAppClosedCallback }) {    
+function DesktopAppWindow ({ appToRender, isAppActive, onAppClosedCallback }) { 
+    
+    const windowCloseClickAudioRef = useRef(new Audio("/sounds/clickSound02.wav"));
     
     // Calculate initial position of the container
     useEffect(() => {
@@ -94,6 +96,9 @@ function DesktopAppWindow ({ appToRender, isAppActive, onAppClosedCallback }) {
 
 
     const onCloseWindowClicked = () => {
+        windowCloseClickAudioRef.current.currentTime = 0; // restart if clicked multiple times
+        windowCloseClickAudioRef.current.loop = false;    // ensure it does not loop
+        windowCloseClickAudioRef.current.play();
         onAppClosedCallback(appToRender);
     }    
 

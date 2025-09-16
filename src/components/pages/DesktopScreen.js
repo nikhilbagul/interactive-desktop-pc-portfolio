@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import './DesktopScreen.css'
 import DesktopAppWindow from "../DesktopAppWindow";
 import moment from 'moment';
@@ -19,6 +19,8 @@ const DesktopScreen = ({loadLockScreen}) => {
     const [isPongOpen, setIsPongOpen] = useState(false);
     const [isAGGKOpen, setIsAGGKOpen] = useState(false);
     //const [isOldPortfolioOpen, setIsOldPortfolioOpen] = useState(false);
+
+    const buttonClickAudioRef = useRef(new Audio("/sounds/clickSound02.wav"));
 
     const handleBlankSpaceClick = () => {        
         setIsBlankSpaceClicked(true); // Update state to indicate the parent component was clicked        
@@ -89,6 +91,10 @@ const DesktopScreen = ({loadLockScreen}) => {
             setStartButtonColor("#000000");
             setIsStartMenuOpen(false);
         }
+
+        buttonClickAudioRef.current.currentTime = 0; // restart if clicked multiple times
+        buttonClickAudioRef.current.loop = false;    // ensure it does not loop
+        buttonClickAudioRef.current.play();
     };
 
     // State to store the current time, date, and day

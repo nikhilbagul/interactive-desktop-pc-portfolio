@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import './StartButton.css';
 
 const StartButton = ( {loadDesktopScreen} ) => {
     
+    const buttonClickAudioRef = useRef(new Audio("/sounds/clickSound02.wav")); 
+
     // Handle button click event
-    const handleClick = () => {        
+    const handleClick = () => {
+        
+        buttonClickAudioRef.current.currentTime = 0; // restart if clicked multiple times
+        buttonClickAudioRef.current.loop = false;    // ensure it does not loop
+        buttonClickAudioRef.current.play();
+        
         loadDesktopScreen();
     };
 

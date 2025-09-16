@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import './DesktopIcon.css';
 
 function DesktopIcon({ iconName, imageUrl, wasParentComponentClicked, onDoubleClick, isActive }) {
@@ -6,7 +6,7 @@ function DesktopIcon({ iconName, imageUrl, wasParentComponentClicked, onDoubleCl
     //const [isHovering, setIsHovering] = useState(false);
     const [divColor, setDivColor] = useState('#ffffff00'); // Initial background color    
     const [isSelected, setIsSelected] = useState(false);
-    
+    const iconClickAudioRef = useRef(new Audio("/sounds/clickSound02.wav"));    
 
     // Update local state when propFromParent changes    
     useEffect(() => {        
@@ -16,12 +16,16 @@ function DesktopIcon({ iconName, imageUrl, wasParentComponentClicked, onDoubleCl
     // Update Div Color state when isSelected changes 
     useEffect(() => {
         setDivColor(isSelected ? '#ffffff54' : '#ffffff00');
-    }, [isSelected]);
+    }, [isSelected]);    
 
     // Function to handle the click event
     const handleDesktopIconClick = (event) => {
         event.stopPropagation(); // Prevent event from bubbling up to parent
         setIsSelected(!isSelected);
+
+        iconClickAudioRef.current.currentTime = 0; // restart if clicked multiple times
+        iconClickAudioRef.current.loop = false;    // ensure it does not loop
+        iconClickAudioRef.current.play();
     };
 
     const handleMouseEnter = () => {
