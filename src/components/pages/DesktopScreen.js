@@ -249,7 +249,7 @@ const DesktopScreen = ({loadLockScreen}) => {
                         imageUrl={"coding.png"}                        
                         wasParentComponentClicked = {isBlankSpaceClicked}
                         onDoubleClick = {onIconDoubleClickHandler}
-                        isActive={false}
+                        isActive={true}
                     />     
 
                     <DesktopIcon
