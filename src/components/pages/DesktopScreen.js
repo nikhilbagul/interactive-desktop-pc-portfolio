@@ -17,7 +17,7 @@ const DesktopScreen = ({loadLockScreen}) => {
     const [isBehanceOpen, setIsBehanceOpen] = useState(false);
     const [isYoutubeOpen, setIsYoutubeOpen] = useState(false);
     const [isPongOpen, setIsPongOpen] = useState(false);
-    const [isAGGKOpen, setIsAGGKOpen] = useState(false);
+    //const [isAGGKOpen, setIsAGGKOpen] = useState(false);
     //const [isOldPortfolioOpen, setIsOldPortfolioOpen] = useState(false);
 
     const buttonClickAudioRef = useRef(new Audio("/sounds/clickSound02.wav"));
@@ -327,6 +327,7 @@ const DesktopScreen = ({loadLockScreen}) => {
                     onMouseLeave={handleStartButtonMouseLeave}
                     onClick={handleStartButtonClick}
                     style={{ backgroundColor: startButtonColor}}
+                    alt="taskbarImage"
                 />
                 <div id="search-box" >
                     <p id="search-box-text" >Welcome back Nikhil!</p>

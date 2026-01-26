@@ -51,7 +51,7 @@ function DesktopIcon({ iconName, imageUrl, wasParentComponentClicked, onDoubleCl
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
-        <img className="iconImage" src={imageUrl} alt={`Image ${iconName}`} />
+        <img className="iconImage" src={imageUrl} alt={`${iconName}`} />
         <div className="iconText">{iconName}</div>
       </div>
     );

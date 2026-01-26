@@ -142,9 +142,9 @@ function DesktopAppWindow ({ appToRender, isAppActive, onAppClosedCallback }) {
                             onMouseMove={onDrag}
                             onMouseUp={stopDrag}
                         />
-                        <img className="topbarButtons" id="minimize" src="MinimizeWindow.png" />
-                        <img className="topbarButtons" id="restoreDown" src="RestoreDownWindow.png" />
-                        <img className="topbarButtons" id="close" src="CloseWindow.png" onClick={onCloseWindowClicked} />
+                        <img className="topbarButtons" id="minimize" src="MinimizeWindow.png" alt="windowMinimizeIcon" />
+                        <img className="topbarButtons" id="restoreDown" src="RestoreDownWindow.png" alt="windowRestoreIcon"/>
+                        <img className="topbarButtons" id="close" src="CloseWindow.png" onClick={onCloseWindowClicked} alt="windowCloseIcon"/>
                     </div>
                     <div id="app-canvas">
                         {showPongApp && <PongIframeComponent/>}
