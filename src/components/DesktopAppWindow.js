@@ -3,7 +3,7 @@ import './DesktopAppWindow.css';
 import PongIframeComponent from "./iframeComponents/PongGame";
 import YoutubeIframeComponent from "./iframeComponents/Youtube";
 import ResumeDesktopAppComponent from "./ResumeDesktopApp";
-import AGGKIframeComponent from "./iframeComponents/AGodlikeGoodKid";
+//import AGGKIframeComponent from "./iframeComponents/AGodlikeGoodKid";
 
 function DesktopAppWindow ({ appToRender, isAppActive, onAppClosedCallback }) { 
     
@@ -45,12 +45,12 @@ function DesktopAppWindow ({ appToRender, isAppActive, onAppClosedCallback }) {
         const initialY = (screenHeight - containerHeight) / 2;
 
         setContainerPosition({ x: initialX, y: initialY });
-    }, [isAppActive]);
+    }, [isAppActive, appToRender]);
 
     const [showPongApp, setPongAppToActive] = useState(false);    
     const [showYoutubeApp, setYoutubeAppToActive] = useState(false);
     const [showResumeApp, setResumeAppToActive] = useState(false);
-    const [showAGGKApp, setAGGKAppToActive] = useState(false);
+    //const [showAGGKApp, setAGGKAppToActive] = useState(false);
 
     useEffect(() => {
         //console.log(appToRender)       
@@ -92,7 +92,7 @@ function DesktopAppWindow ({ appToRender, isAppActive, onAppClosedCallback }) {
         //     setAGGKAppToActive(false);            
         // }
         
-    }, [isAppActive]);
+    }, [isAppActive, appToRender]);
 
 
     const onCloseWindowClicked = () => {
