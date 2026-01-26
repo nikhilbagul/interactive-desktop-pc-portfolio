@@ -338,7 +338,7 @@ const DesktopScreen = ({loadLockScreen}) => {
                 {isResumeOpen && <TaskbarAppIcon appName={"Resume"} imageUrl={"resumeIcon.png"} isAppMaximized={true} /> }
                 {/* {isBehanceOpen && <TaskbarAppIcon appName={"Behance"} imageUrl={"behanceIcon.png"} isAppMaximized={true} /> } */}
                 {isYoutubeOpen && <TaskbarAppIcon appName={"Youtube"} imageUrl={"youtubeIcon.png"} isAppMaximized={true} /> }
-                {isAGGKOpen && <TaskbarAppIcon appName={"AGodlikeGoodKid"} imageUrl={"aggkIcon.webp"} isAppMaximized={true} /> }
+                {/* {isAGGKOpen && <TaskbarAppIcon appName={"AGodlikeGoodKid"} imageUrl={"aggkIcon.webp"} isAppMaximized={true} /> } */}
                 
 
                 <div id="clock-widget">
