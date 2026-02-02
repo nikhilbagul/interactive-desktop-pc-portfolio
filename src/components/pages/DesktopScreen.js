@@ -244,13 +244,13 @@ const DesktopScreen = ({loadLockScreen}) => {
                         isActive={false}
                     />
 
-                    <DesktopIcon
+                    {/* <DesktopIcon
                         iconName={"portfolio_deprecated"}
                         imageUrl={"coding.png"}                        
                         wasParentComponentClicked = {isBlankSpaceClicked}
                         onDoubleClick = {onIconDoubleClickHandler}
                         isActive={true}
-                    />     
+                    />      */}
 
                     <DesktopIcon
                         iconName={"Steam"}
